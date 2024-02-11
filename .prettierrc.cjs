@@ -1,0 +1,20 @@
+module.exports = {
+  importOrder: [
+    "^react$",
+    "react$",
+    "<THIRD_PARTY_MODULES>",
+    "^@app/(.*)$",
+    "^@processes/(.*)$",
+    "^@pages/(.*)$",
+    "^@widgets/(.*)$",
+    "^@features/(.*)$",
+    "^@entities/(.*)$",
+    "^@shared/(.*)$",
+    "^./((?!scss|model|constants).)*$",
+    "^../(.*)$",
+    "\\./constants",
+    "\\./model",
+    "^.+scss$",
+  ],
+  importOrderCaseInsensitive: true,
+};
