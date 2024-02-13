@@ -54,9 +54,9 @@ const $sortedAndFilteredUsers = combine(
       )
       .filter(
         (user) =>
-          user.name.includes(query) &&
-          user.email.includes(filters.email) &&
-          user.phone.includes(filters.phone),
+          user.name.toLowerCase().includes(query.toLowerCase()) &&
+          user.email.toLowerCase().includes(filters.email.toLowerCase()) &&
+          user.phone.toLowerCase().includes(filters.phone.toLowerCase()),
       ),
 );
 
