@@ -32,4 +32,8 @@ module.exports = {
       version: "detect",
     },
   },
+  globals: {
+    window: true,
+    module: true,
+  },
 };
