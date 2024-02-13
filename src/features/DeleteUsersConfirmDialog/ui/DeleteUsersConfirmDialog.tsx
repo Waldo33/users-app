@@ -42,7 +42,7 @@ export const DeleteUsersConfirmDialog: FC<IDeleteUsersConfirmDialogProps> = ({
       <DialogTitle>{t("title")}</DialogTitle>
       <DialogContent>
         <DialogContentText>{t("text")}</DialogContentText>
-        <Stack direction="row" gap={1} sx={{ mt: 1 }}>
+        <Stack direction="row" gap={1} sx={{ mt: 1, py: 1 }} overflow="auto">
           {selectedUsers.map((user) => (
             <Chip
               key={user.id}
