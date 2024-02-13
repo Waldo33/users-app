@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { AppBar, Box, Toolbar } from "@mui/material";
 import { useCallback } from "react";
 import { useVisibility } from "@shared/hooks";
 import { CreateUserFormDrawer } from "@features/CreateUserForm";
@@ -71,8 +71,12 @@ export const UsersPage = () => {
   );
 
   return (
-    <Box sx={{ p: 2 }}>
-      <SearchUsers onClickSettings={onClickSearchHandler} />
+    <Box sx={{ p: 2, pt: 10 }}>
+      <AppBar>
+        <Toolbar sx={{ p: 2, bgcolor: "white" }}>
+          <SearchUsers onClickSettings={onClickSearchHandler} />
+        </Toolbar>
+      </AppBar>
       <UserList
         users={users}
         isLoading={isLoading}
