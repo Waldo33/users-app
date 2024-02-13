@@ -1,4 +1,4 @@
-# [Users App](https://users-app-waldo33.netlify.app/users)
+# [Users App](https://users-app-waldo33.netlify.app)
 
 ## Стек технологий
 - React
@@ -9,6 +9,7 @@
 - react-input-mask
 - Material UI
 - React Hook Form & yup
+- [Netlify Deploy](https://users-app-waldo33.netlify.app)
 
 ## Команды
 
