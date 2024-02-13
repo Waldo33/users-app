@@ -43,11 +43,17 @@ export const UsersEffects = {
 
     return data;
   }),
-  removeAnyUsers: createEffect<TUser["id"][], TUser["id"][]>((userIds) => {
-    // Можно было бы сделать удаление через Promise.all,
-    // но из-за ограничений на кол-во запросов у JSONPlaceholder'a решил сделать удаление на клиенте
-    // Example: Promise.all(userIds.map((id) => $api.delete<TUser>(`/users/${id}`)));
+  removeAnyUsers: createEffect<TUser["id"][], TUser["id"][]>(
+    async (userIds) => {
+      const responses = await Promise.all(
+        userIds.map((id) => $api.delete<TUser>(`/users/${id}`)),
+      );
 
-    return userIds;
-  }),
+      const responseIds = await responses.map(
+        (response) => +response.request.responseURL.split("/").at(-1),
+      );
+
+      return responseIds;
+    },
+  ),
 };
