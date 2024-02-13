@@ -1,35 +1,14 @@
 import { $api } from "@shared/api";
 import { createEffect } from "effector";
-import { TSortOrder, TUser, TUsersSortFields } from "./types";
+import { TUser } from "./types";
 import { TUserValidationSchema } from "@features/CreateUserForm";
 
-type TUserLoadParams = {
-  _limit?: number;
-  query: string;
-  filters?: {
-    phone?: string;
-    email?: string;
-  };
-  sort: TUsersSortFields;
-  order: TSortOrder;
-};
-
 export const UsersEffects = {
-  load: createEffect(async (params?: TUserLoadParams) => {
+  load: createEffect(async () => {
     // Если бы кол-во пользователей не ограничивалось 10,
     // можно было бы добавить бесконечную подгрузку на основе Intersection Observer API
 
-    const { data } = await $api.get<TUser[]>("/users", {
-      params: {
-        name_like: params?.query || "",
-        phone_like: params?.filters?.phone || "",
-        email_like: params?.filters?.email || "",
-        _sort: params?.sort,
-        _order: params?.order,
-        _limit: params?._limit,
-        _page: 1,
-      },
-    });
+    const { data } = await $api.get<TUser[]>("/users");
 
     return data;
   }),

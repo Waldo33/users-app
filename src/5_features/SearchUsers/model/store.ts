@@ -1,6 +1,7 @@
-import { createStore } from "effector";
-import { TSortOrder, TUsersSortFields } from "@entities/User";
+import { combine, createStore } from "effector";
+import { TSortOrder, TUsersSortFields, UsersStore } from "@entities/User";
 import { SearchUsersEvents } from "./events";
+import { sortUsersByNameOrId, sortUsersByZipcode } from "./lib";
 
 const $query = createStore<string>("").on(
   SearchUsersEvents.setSearchQuery,
@@ -39,8 +40,29 @@ const $filters = createStore<{
     email: payload,
   }));
 
+const $sortedAndFilteredUsers = combine(
+  UsersStore.$users,
+  $query,
+  $sort,
+  $filters,
+  (users, query, sort, filters) =>
+    [...users]
+      .sort((user1, user2) =>
+        sort.field === "address.zipcode"
+          ? sortUsersByZipcode(user1, user2, sort.order)
+          : sortUsersByNameOrId(user1, user2, sort.order, sort.field),
+      )
+      .filter(
+        (user) =>
+          user.name.includes(query) &&
+          user.email.includes(filters.email) &&
+          user.phone.includes(filters.phone),
+      ),
+);
+
 export const SearchUsersStore = {
   $query,
   $sort,
   $filters,
+  $sortedAndFilteredUsers,
 };

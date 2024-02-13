@@ -45,17 +45,15 @@ type TReturnValue = [
   TFiltersValues,
 ];
 
-// Возможно, в данном случае было лучше сделать фильтрацию и сортировку на клиенте,
-// но мне показалось интересным задействовать API для этого.
-
 export const useSortAndFilteredUsers = () => {
   const { t } = useTranslation("translation");
-  const users = useUnit(UsersStore.$users);
+  const sortedAndFilteredUsers = useUnit(
+    SearchUsersStore.$sortedAndFilteredUsers,
+  );
   const isLoading = useUnit(UsersStore.$isLoading);
 
-  const [sort, query, filters] = useUnit([
+  const [sort, filters] = useUnit([
     SearchUsersStore.$sort,
-    SearchUsersStore.$query,
     SearchUsersStore.$filters,
   ]);
 
@@ -70,7 +68,7 @@ export const useSortAndFilteredUsers = () => {
         label: t("sortUsers.options.name"),
       },
       {
-        value: "zipcode",
+        value: "address.zipcode",
         label: t("sortUsers.options.zipcode"),
       },
     ],
@@ -120,13 +118,8 @@ export const useSortAndFilteredUsers = () => {
   );
 
   useEffect(() => {
-    UsersEffects.load({
-      sort: sort.field,
-      order: sort.order,
-      filters,
-      query,
-    });
-  }, [sort, query, filters]);
+    UsersEffects.load();
+  }, []);
 
   const options: TOptions = useMemo(
     () => ({
@@ -150,5 +143,12 @@ export const useSortAndFilteredUsers = () => {
     ],
   );
 
-  return [users, isLoading, options, handlers, sort, filters] as TReturnValue;
+  return [
+    sortedAndFilteredUsers,
+    isLoading,
+    options,
+    handlers,
+    sort,
+    filters,
+  ] as TReturnValue;
 };

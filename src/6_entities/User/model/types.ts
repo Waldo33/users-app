@@ -14,5 +14,5 @@ type TAddress = {
   zipcode?: string;
 };
 
-export type TUsersSortFields = "id" | "name" | "zipcode";
+export type TUsersSortFields = "id" | "name" | "address.zipcode";
 export type TSortOrder = "asc" | "desc";
