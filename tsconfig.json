@@ -15,13 +15,13 @@
     "jsx": "react-jsx",
     "baseUrl": ".",
     "paths": {
-      "@app/*": ["src/app/*"],
-      "@processes/*": ["./src/processes/*"],
-      "@pages/*": ["./src/pages/*"],
-      "@widgets/*": ["./src/widgets/*"],
-      "@features/*": ["./src/features/*"],
-      "@entities/*": ["./src/entities/*"],
-      "@shared/*": ["./src/shared/*"]
+      "@app/*": ["src/1_app/*"],
+      "@processes/*": ["./src/2_processes/*"],
+      "@pages/*": ["./src/3_pages/*"],
+      "@widgets/*": ["./src/4_widgets/*"],
+      "@features/*": ["./src/5_features/*"],
+      "@entities/*": ["./src/6_entities/*"],
+      "@shared/*": ["./src/7_shared/*"]
     },
 
     /* Linting */
