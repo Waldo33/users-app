@@ -71,7 +71,7 @@ export const UsersPage = () => {
   );
 
   return (
-    <Box sx={{ p: 2, pt: 10 }}>
+    <Box sx={{ p: 2, pt: 12 }}>
       <AppBar>
         <Toolbar sx={{ p: 2, bgcolor: "white" }}>
           <SearchUsers onClickSettings={onClickSearchHandler} />
