@@ -1,11 +1,14 @@
-import { RootSwitcher } from "@processes/RootSwitcher";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import "./app.css";
+import { UsersPage } from "@pages/UsersPage";
 
 function App() {
   return (
     <BrowserRouter>
-      <RootSwitcher />
+      <Routes>
+        <Route path="/users" element={<UsersPage />} />
+        <Route path="*" element={<Navigate to="/users" />} />
+      </Routes>
     </BrowserRouter>
   );
 }
