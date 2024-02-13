@@ -1,5 +1,4 @@
-# Users App
-[![Netlify Status](https://api.netlify.com/api/v1/badges/0fd25967-333a-4a67-9c69-f16a38025507/deploy-status)](https://app.netlify.com/sites/users-app-waldo33/deploys)
+[# Users App](https://users-app-waldo33.netlify.app/users)
 
 ## Стек технологий
 - React
