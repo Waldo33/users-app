@@ -28,7 +28,7 @@ export const UsersEffects = {
         userIds.map((id) => $api.delete<TUser>(`/users/${id}`)),
       );
 
-      const responseIds = await responses.map(
+      const responseIds = responses.map(
         (response) => +response.request.responseURL.split("/").at(-1),
       );
 
