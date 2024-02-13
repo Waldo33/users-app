@@ -38,7 +38,7 @@ export const UserList: FC<IUserListProps> = ({
   return (
     <Box sx={{ overflowY: "auto" }}>
       {!isLoading && users?.length === 0 && (
-        <Typography align="center" variant="h6">
+        <Typography sx={{ py: 2 }} align="center" variant="h6">
           {t("searchUsers.notFound")}
         </Typography>
       )}
