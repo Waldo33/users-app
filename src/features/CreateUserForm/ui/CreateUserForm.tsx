@@ -20,6 +20,7 @@ export const CreateUserForm: FC<ICreateUserFormProps> = () => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm({
     mode: "all",
@@ -28,6 +29,7 @@ export const CreateUserForm: FC<ICreateUserFormProps> = () => {
 
   const onCreate = (data: TUserValidationSchema) => {
     UsersEffects.addUser(data);
+    reset();
   };
 
   return (
