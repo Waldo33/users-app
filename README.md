@@ -1,4 +1,4 @@
-[# Users App](https://users-app-waldo33.netlify.app/users)
+# [Users App](https://users-app-waldo33.netlify.app/users)
 
 ## Стек технологий
 - React
