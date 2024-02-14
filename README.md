@@ -14,6 +14,7 @@
 ## Команды
 
 `npm run dev` - запустить фронтенд в режиме разработки
+
 `npm run build` - сборка
 
 ## Post Scriptum
