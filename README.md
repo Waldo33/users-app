@@ -1,7 +1,7 @@
 # [Users App](https://users-app-waldo33.netlify.app)
 
 ## Стек технологий
-- Node 16.7.0
+- Node `v16.7.0`
 - React
 - Effector
 - Typescript
