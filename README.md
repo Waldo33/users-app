@@ -1,6 +1,7 @@
 # [Users App](https://users-app-waldo33.netlify.app)
 
 ## Стек технологий
+- Node 16.7.0
 - React
 - Effector
 - Typescript
@@ -10,7 +11,7 @@
 - Material UI
 - React Hook Form & yup
 - [Netlify Deploy](https://users-app-waldo33.netlify.app)
-
+  
 ## Команды
 
 `npm run dev` - запустить фронтенд в режиме разработки
