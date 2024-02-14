@@ -7,7 +7,7 @@
 - Typescript
 - Vite
 - Feature-Sliced Design
-- react-input-mask
+- React Input Mask
 - Material UI
 - React Hook Form & yup
 - [Netlify Deploy](https://users-app-waldo33.netlify.app)
