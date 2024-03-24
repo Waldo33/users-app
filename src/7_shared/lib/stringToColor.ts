@@ -1,4 +1,12 @@
-export const stringToColor = (string: string) => {
+/**
+ * @function stringToColor
+ * @description Преобразует строку в цвет в формате HEX, основываясь на charCode каждого символа
+ * @param {string} string
+ * @returns {string}
+ * @example
+ * stringToColor("Hello, world!") // #f5cbf0
+ */
+export const stringToColor = (string: string): string => {
   let hash = 0;
   let i;
 

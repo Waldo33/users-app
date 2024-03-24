@@ -23,7 +23,7 @@ export const UserItem: FC<IUserItemProps> = ({ user, isSelected, onClick }) => {
     (userId: TUser["id"]) => () => {
       onClick?.(userId);
     },
-    [onClick],
+    [onClick]
   );
 
   return (
